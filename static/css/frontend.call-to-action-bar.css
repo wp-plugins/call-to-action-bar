@@ -1,0 +1,26 @@
+#call-to-action-bar-spacer {
+	height: 44px;
+}
+
+#call-to-action-bar-button {
+  display: inline-block;
+  padding: 4px 10px 4px;
+  text-decoration: none;
+  margin: 0px 20px 1px;
+  border-radius: 3px;
+  line-height: 29px;
+  font-weight: bold;
+}
+
+#call-to-action-bar-text {
+	font-size: 15px;
+	font-weight: 300;
+	line-height: 40px;
+	font-family: Lato, Helvetica, Arial, sans-serif;
+}
+
+@media(max-width: 550) {
+	#call-to-action-bar-spacer {
+		height: 88px;
+	}
+}
