@@ -22,7 +22,7 @@ do_settings_sections('call-to-action-bar-settings-group');
 			<label for="general_text" class="col-sm-2 control-label">Bar text</label>
 			<div class="col-sm-10 col-md-8">
 			  <input type="text" id="general_text" name="ctab_general_text" value="<?php echo esc_attr( get_option('ctab_general_text') ); ?>" class="form-control" />
-			  <span class="help-block">Provide a short teaser of your product/project/article/etc.</span>
+			  <span class="help-block">Provide a short teaser of your product/project/article/etc. HTML elements <code>strong</code>, <code>b</code>, <code>i</code>, <code>em</code>, <code>u</code> are allowed.</span>
 			</div>
 		</div>
 		<div class="form-group">
@@ -37,6 +37,13 @@ do_settings_sections('call-to-action-bar-settings-group');
 			<div class="col-sm-10 col-md-8">
 			  <input type="text" id="call_to_action_url" name="ctab_call_to_action_url" value="<?php echo esc_attr( get_option('ctab_call_to_action_url') ); ?>" class="form-control" />
 			  <span class="help-block">Provide a URL to your call-to-action site.</span>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="able_to_dismiss" class="col-sm-2 control-label">Dismiss bar</label>
+			<div class="col-sm-10">
+			  <input type="checkbox" id="able_to_dismiss" name="ctab_able_to_dismiss" value="1" <?php checked( '1', get_option( 'ctab_able_to_dismiss' ) ); ?> class="form-control" />
+			  <span class="help-block">Specify whether the visitor can dismiss the bar or not.</span>
 			</div>
 		</div>
 	</fieldset>

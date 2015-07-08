@@ -3,7 +3,7 @@ Contributors: jademind
 Tags: call-to-action, top bar, sticky bar
 Requires at least: 4.0
 Tested up to: 4.2.2
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 
 The 'Call-To-Action Bar' plugin adds a simple bar at the top of your page with a nice call-to-action button.
@@ -33,6 +33,10 @@ Upload the Call-To-Action Bar plugin to your blog, activate it and configure you
 1, 2, 3: You're done!
 
 == Changelog ==
+
+= 1.0.1 =
+* Fixed admin css styles.
+* Added option to dismiss the bar.
 
 = 1.0.0 =
 * Initial release of the plugin.

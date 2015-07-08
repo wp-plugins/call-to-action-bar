@@ -29,6 +29,7 @@ class CallToActionBar {
 	{
 		// add option default values
 		add_option('ctab_active', false);
+		add_option('ctab_able_to_dismiss', false);
 		add_option('ctab_general_text', 'Our new product did launch today.');
 		add_option('ctab_call_to_action_text', 'Visit now');
 		add_option('ctab_call_to_action_url', 'http://www.google.com');
@@ -43,6 +44,7 @@ class CallToActionBar {
 	{
 		// remove option on uninstall
 		delete_option('ctab_active' );
+		delete_option('ctab_able_to_dismiss' );
 		delete_option('ctab_general_text' );
 		delete_option('ctab_call_to_action_text' );
 		delete_option('ctab_call_to_action_url' );
@@ -76,6 +78,7 @@ class CallToActionBar {
 	public static function register_settings()
 	{
 		register_setting( 'call-to-action-bar-settings-group', 'ctab_active' );
+		register_setting( 'call-to-action-bar-settings-group', 'ctab_able_to_dismiss' );
 		register_setting( 'call-to-action-bar-settings-group', 'ctab_general_text' );
 		register_setting( 'call-to-action-bar-settings-group', 'ctab_call_to_action_text' );
 		register_setting( 'call-to-action-bar-settings-group', 'ctab_call_to_action_url' );
@@ -105,8 +108,8 @@ class CallToActionBar {
 	{
 		// add custom js/css
 		wp_enqueue_style('frontend-call-to-action-bar-css', plugins_url('static/css/frontend.call-to-action-bar.css', __FILE__));
+		wp_enqueue_script('frontend-jquery-cookies-js', plugins_url('static/js/jquery.cookie.js', __FILE__), array('jquery'));
 	}
-
 
 
 	public static function render_options_page() 
@@ -132,6 +135,7 @@ class CallToActionBar {
 				);
 	
 			// get options
+			$ctab_able_to_dismiss 		= get_option('ctab_able_to_dismiss', false);
 			$ctab_general_text 			= wp_kses(get_option('ctab_general_text', 'Our new product did launch today.'), $allowed_html_tags);
 			$ctab_call_to_action_text 	= esc_html(get_option('ctab_call_to_action_text', 'Visit now'));
 			$ctab_call_to_action_url 	= esc_url(get_option('ctab_call_to_action_url', 'http://www.google.com'));
